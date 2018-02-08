@@ -11,4 +11,8 @@ describe("coin_combo") do
     cents = Cents.new(3)
     expect(cents.convert()).to(eq("3 pennies"))
   end
+  it("returns one nickel for input '5'") do
+    cents = Cents.new(5)
+    expect(cents.convert()).to(eq("1 nickel"))
+  end
 end
