@@ -4,9 +4,13 @@ class Cents
   end
 
   def convert
-    coin_value = { 1 => "penny" }
-    coin_name = coin_value.fetch(@cents)
-    @cents.to_s + " " + coin_name
+    penny = 0
+    penny_amount = @cents += penny
+    if penny_amount > 1
+      penny_amount.to_s + " " + "pennies"
+    else
+      penny_amount.to_s + " " + "penny"
+    end
   end
 
 end
