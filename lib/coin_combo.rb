@@ -4,17 +4,29 @@ class Cents
   end
 
   def convert
+    coin_string = ""
     penny = 0
     nickel = 0
 
-    penny_amount = @cents += penny
-    nickel_amount = @cents += nickel
-    if penny_amount > 1
-      penny_amount.to_s + " " + "pennies"
-    else
-      penny_amount.to_s + " " + "penny"
+    penny_amount = @cents%5
+    nickel_amount = @cents/5
+
+    if nickel_amount > 1
+      coin_string = coin_string + nickel_amount.to_s + " nickels"
+    elsif nickel_amount == 1
+      coin_string = coin_string + nickel_amount.to_s + " nickel"
     end
 
+    if penny_amount > 1
+      coin_string = coin_string + penny_amount.to_s + " " + "pennies"
+    elsif penny_amount == 1
+      coin_string = coin_string + penny_amount.to_s + " " + "penny"
+    end
+
+    return coin_string
+    binding.pry
   end
+
+
 
 end
