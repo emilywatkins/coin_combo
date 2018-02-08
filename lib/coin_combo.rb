@@ -5,8 +5,6 @@ class Cents
 
   def convert
     coin_string = ""
-    penny = 0
-    nickel = 0
 
     penny_amount = @cents%5
     nickel_amount = @cents/5
